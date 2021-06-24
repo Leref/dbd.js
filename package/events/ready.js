@@ -62,9 +62,9 @@ module.exports = async (client, Database) => {
       }
     });
 
-  console.log("Running DBD.JS");
+  console.log(`Using dbd.js || v` + require("../../package.json").version);
   console.log(
-    "Need help? Visit our support server! https://discord.gg/HMUfMXDQsV"
+    "Need help? Visit our Discord Server! - https://dbd.js.org/invite"
   );
 
   if (client.statuses.size) {
@@ -110,7 +110,7 @@ module.exports = async (client, Database) => {
     f();
   }
   readyCommands(client);
-  console.log(`Ready on client ${client.user.tag}`);
+  console.log(`Ready on Client ${client.user.tag}`);
 
   if (client.dbhToken) {
     const API = new DanBotHosting.Client(client.dbhToken, client);

@@ -297,7 +297,7 @@ class Client {
       Discord.Constants.DefaultOptions.ws.properties.$browser =
         "Discord Android";
 
-      console.log(`Enabled mobile presence`);
+      console.log(`Enabled mobile presence.`);
     }
 
     if (options.sharding) {
@@ -342,7 +342,7 @@ class Client {
       client.db = options.database;
     } else {
       Database.once("ready", () => {
-        console.log(`Database ready!`);
+        console.log(`Database is ready.`);
       });
 
       Database.connect();
