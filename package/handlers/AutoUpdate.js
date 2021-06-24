@@ -1,40 +1,52 @@
 const { exec } = require("child_process");
-const fetch = require("node-fetch");
+const axios = require("axios").default;
 const json = require("../../package.json");
 module.exports = async () => {
-  const get = await fetch("https://api.leref.ga/package/version", {
-    method: "GET",
-  });
-  const response = await get.json();
-  if (respone && json.version !== response.version) {
-    console.warn(
-      "\x1b[32mDBD.JS Auto Update: \x1b[0mnpm install dbd.js@" +
-        response.version +
-        ""
-    );
-    exec("npm install dbd.js@latest", (err, stdout, stdeer) => {
-      if (err) {
-        return console.error(
-          "\x1b[31mDBD.JS Auto Update ran to error, ERR: \x1b[0m\n" + err
-        );
-      }
-      console.log(stdeer);
-      console.log(stdout);
-      console.log(
-        "\x1b[32mDBD.JS Auto Update: \x1b[0mSuccessfully Installed DBD.JS Version " +
-          response.version +
-          ", Restarting in 3 Seconds"
-      );
-      setTimeout(function () {
-        process.on("exit", () => {
-          require("child_process").spawn(process.argv.shift(), process.argv, {
-            cwd: process.cwd(),
-            detached: true,
-            stdio: "inherit",
-          });
-        });
-        process.exit();
-      }, 3000);
-    });
+  console.log("dbd.js AutoUpdate System: \u001b[33mExecuting a contact with API...\u001b[0m")
+
+  try {
+    const res = await axios.get("https://api.leref.ga/dbd/version")
+    if (json.version !== res.data.version) {
+      console.log("dbd.js AutoUpdate System: \u001b[33mAvailable version v" + res.data.version + " ready to install.\u001b[0m");
+
+      // Install initiate 
+      console.log("dbd.js AutoUpdate System: \u001b[33m Installing version...\u001b[0m")
+      const Process = exec("npm i dbd.js@latest", (error, stdout, stderr) => {
+        if (error) return console.error("dbd.js AutoUpdate System: \u001b[31mERR!\u001b[0m " + error.message);
+
+        console.log("dbd.js AutoUpdate System: \u001b[32mSuccessfully Installed dbd.js v" + res.data.version + ".\u001b[0m")
+        console.log("dbd.js AutoUpdate System: Commencing 'RESTART' in 3 Seconds...");
+
+        setTimeout(Reboot, 3000)
+      })
+      Process.stdout.setEncoding("utf8");
+      Process.stdout.on("data", (chunk) => {
+        console.log(chunk.toString());
+      });
+
+      Process.stderr.setEncoding("utf8");
+      Process.stderr.on("data", (chunk) => {
+        console.log(chunk.toString());
+      });
+    } else {
+      console.log("dbd.js AutoUpdate System: \u001b[32mVersion is up-to-date.\u001b[0m")
+    }
+  } catch (error) {
+     console.warn("dbd.js AutoUpdate System: \u001b[31mUnexpected error when trying to reach API.\u001b[0m");
   }
 };
+
+function Reboot() {
+   try {
+    process.on("exit", () => {
+      require("child_process").spawn(process.argv.shift(), process.argv, {
+        cwd: process.cwd(),
+        detached: true,
+        stdio: "inherit",
+      });
+    });
+    process.exit();
+  } catch (e) {
+    console.error(`dbd.js AutoUpdate System: \u001b[31mERR!\u001b[0m Failed to commence 'RESTART', ${e.message}`);
+  }
+}

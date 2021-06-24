@@ -1,12 +1,12 @@
 {
-  "installed_version": "3.0.6-pre",
+  "installed_version": "3.0.7-pre",
   "name": "dbd.js",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "description": "DBD.JS - Library that simplifes coding for your Discord Bot.",
   "main": "package/index.js",
   "typings": "package/index.d.ts",
   "scripts": {
-    "start": "node index.js",
+    "start": "node test.js",
     "prettycheck": "prettier --check \"package/**/*.js\"",
     "prettywrite": "prettier --write \"package/**/*.js\""
   },
@@ -44,7 +44,17 @@
     "package",
     "test.js"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leref/dbd.js.git"
+  },
   "keywords": [
     "api",
     "dbd.js",

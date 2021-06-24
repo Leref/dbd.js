@@ -3,7 +3,7 @@ const json = require("../../package.json");
 module.exports = async () => {
   try {
     const get = await new Promise((res) => {
-      fetch("https://api.leref.ga/package/version", { method: "GET" })
+      fetch("https://api.leref.ga/dbd/version", { method: "GET" })
         .then(res)
         .catch(() => res({}));
 
@@ -12,7 +12,7 @@ module.exports = async () => {
     const response = get.json;
     if (response && json.version !== response.version) {
       console.warn(
-        "\x1b[33mDBD.JS Version: \x1b[0m" +
+        "\x1b[33mdbd.js Version: \x1b[0m" +
           response.version +
           " is available for installation ( Installed " +
           json.version +
