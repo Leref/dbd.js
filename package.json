@@ -1,7 +1,7 @@
 {
-  "installed_version": "3.0.7-pre",
+  "installed_version": "3.0.8-pre",
   "name": "dbd.js",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "DBD.JS - Library that simplifes coding for your Discord Bot.",
   "main": "package/index.js",
   "typings": "package/index.d.ts",
@@ -13,15 +13,15 @@
   "dependencies": {
     "@discordjs/opus": "^0.5.0",
     "danbot-hosting": "^0.1.6",
-    "dbdjs.db": "^1.0.1",
+    "dbdjs.db": "^1.0.4",
     "discord.js": "^12.5.3",
     "moment": "^2.29.1",
     "ms-parser": "^1.0.5",
     "parse-ms": "^2.1.0",
-    "soundcloud-downloader": "^0.2.4",
-    "spotify-url-info": "^2.2.0",
-    "yt-search": "^2.7.6",
-    "ytdl-core": "^4.5.0"
+    "soundcloud-downloader": "^1.0.0",
+    "spotify-url-info": "^2.2.3",
+    "yt-search": "^2.9.0",
+    "ytdl-core": "^4.8.3"
   },
   "devDependencies": {
     "axios": "^0.21.1",
