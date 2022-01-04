@@ -1,8 +1,8 @@
 {
-  "installed_version": "3.0.8-pre",
+  "installed_version": "3.0.8",
   "name": "dbd.js",
   "version": "3.0.8",
-  "description": "DBD.JS - Library that simplifes coding for your Discord Bot.",
+  "description": "dbd.js - Library that simplifes coding for your Discord Bot.",
   "main": "package/index.js",
   "typings": "package/index.d.ts",
   "scripts": {
