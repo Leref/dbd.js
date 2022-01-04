@@ -1,11 +1,11 @@
   <br />
     <p>
-    <a href="https://dbd.leref.ga"><img src="https://cdn.discordapp.com/attachments/804505335397744650/816746774571515914/dbdjs.png" alt="dbd.js" /></a>
+    <a href="https://aoi.leref.ga"><img src="https://cdn.discordapp.com/attachments/804505335397744650/816746774571515914/dbdjs.png" alt="dbd.js" /></a>
   </p>
 
-# DBD.JS
+# dbd.js
 [![NPM Downloads](https://img.shields.io/npm/dt/dbd.js.svg?maxAge=3600)](https://www.npmjs.com/package/dbd.js)
-[![Discord Server](https://img.shields.io/discord/773352845738115102?color=7289da&logo=discord&logoColor=white)](https://dbd.js.org/invite)
+[![Discord Server](https://img.shields.io/discord/773352845738115102?color=5865F2&logo=discord&logoColor=white)](https://discord.gg/HMUfMXDQsV)
 
 ## Table Of Contents
 - [About](#about)
@@ -17,16 +17,17 @@
   - [Music](#music)
 - [Links](#links)
 
+# THIS PACKAGE WILL NO LONGER BE MAINTAINED ANYMORE.
+# PLEASE USE [AOI.JS](https://www.npmjs.com/package/aoi.js) FOR FURTHER UPDATES / SUPPORT.
 
 ## About
-DBD.JS is a package that aim to allows you to make your Discord Bots with Ease.
+dbd.js is a package that aim to allows you to make your Discord Bots with Ease.
 
 Aiming to be the easiest package to learn <br>
 It's swift and flexible using functions </br>
 
-## Examples
-
 ### Setup
+
 ```js
 const dbd = require("dbd.js")
 
@@ -88,7 +89,7 @@ bot.interactionCommand({
 bot.onInteractionCreate()
 ```
 
-More Information in our [Documentation](https://dbd.leref.ga/guide/slash-commands)
+More Information in our [Documentation](https://aoi.leref.ga/v/aoi.js-v5/guide/advanced-guides/slash-commands)
 
 #### Music
 
@@ -106,10 +107,10 @@ code: `$playSong[song;leave vc time;defean (yes or no);leave when vc empty (yes/
 })
 ```
 
-More Information in our [Documentation](https://dbd.leref.ga/guide/music)
+More Information in our [Documentation](https://aoi.leref.ga/v/aoi.js-v5/guide/advanced-guides/music)
 
 ## Links
-DBD.JS was made by [DBD.JS Team](https://discord.gg/HMUfMXDQsV)
+
 - [Website](https://dbd.js.org)
-- [Discord Server](https://dbd.js.org/invite)
-- [Documentation](https://dbd.leref.ga)
+- [Discord Server](https://discord.gg/HMUfMXDQsV)
+- [Documentation](https://aoi.leref.ga)
